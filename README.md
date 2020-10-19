@@ -11,5 +11,5 @@ then run it
 #it automatically installs u the diver for For google chrome and if not then manually install it and remenber
 #"YOU HAVE TO SPECIFY THE PATH ENVIRONMENT VARIABLE by copying the path where u installed the driver then going into properties of your This PC or by searching advance system setting then go to 
 #Environment variables and open it then click on path and then click on new path and paste it "
-#Then run it Enter the name of ur friend whome you want to send message and it should be on your unarchieved chats list otherwise it doesnt work(LIMITATION)
+#Then run program on pycharm on existing interpreter . Enter the name of ur friend whome you want to send message and it should be on your unarchieved chats list otherwise it doesnt work(LIMITATION)
 #And then text and delay time when u want to send it.Scan QR code n then it will send that automatically! when the delay time is over
