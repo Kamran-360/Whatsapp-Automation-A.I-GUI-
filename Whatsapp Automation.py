@@ -7,7 +7,6 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import pyttsx3
 import datetime
-from plyer import notification
 from webdriver_manager.chrome import ChromeDriverManager
 try:
     driver = webdriver.Chrome(ChromeDriverManager().install())
@@ -40,29 +39,24 @@ def Whatsapp_Automation():
     if(namevalue.get()==""):
         speak("Sir first fill the entries")
     else:
-     # # try:
-     #  driver = webdriver.Chrome()
-      driver.get("https://web.whatsapp.com/")
-      Label(root, text="Please scan QR code for whatsapp Web", font=("Helvetica 13 bold")).grid(row=4, column=3)
-      speak("Please scan the QR code for whatsapp web")
-      time.sleep(15)
-      p=driver.find_element_by_css_selector(f"span[title={namevalue.get()}]")
-      p.click()
-      time.sleep(timevalue.get())
-      put=driver.find_element_by_xpath("/html/body/div[1]/div/div/div[4]/div/footer/div[1]/div[2]/div/div[2]")
-      put.send_keys(textvalue.get())
-      put.send_keys(Keys.RETURN)
-       # notification.notify(
-       #     title='Whatsapp Automation Says',
-       #     message='Message Successfully sent sir!\nThanks for using our service',#you can also prefer Nottify
-       #     app_icon=None,  # e.g. 'C:\\icon_32x32.ico'
-       #     timeout=10,  # seconds
-       # )
-      messagebox.showinfo("Whatsapp Automation", "Message Sent Successfully!")
-      speak("Message Sent Successfully!")
+      try:
+       driver = webdriver.Chrome()
+       driver.get("https://web.whatsapp.com/")
+       Label(root, text="Please scan QR code for whatsapp Web", font=("Helvetica 13 bold")).grid(row=4, column=3)
+       speak("Please scan the QR code for whatsapp web")
+       time.sleep(15)
+       p=driver.find_element_by_css_selector(f"span[title={namevalue.get()}]")
+       p.click()
+       time.sleep(timevalue.get())
+       put=driver.find_element_by_xpath("/html/body/div[1]/div/div/div[4]/div/footer/div[1]/div[2]/div/div[2]")
+       put.send_keys(textvalue.get())
+       put.send_keys(Keys.RETURN)
+   
+       messagebox.showinfo("Whatsapp Automation", "Message Sent Successfully!")
+       speak("Message Sent Successfully!")
 
-     # except:
-     #   speak("message not sent!")
+      except:
+       speak("message not sent!")
 if __name__ == '__main__':
   wishMe()
   root.title("Whatsapp Automation")
